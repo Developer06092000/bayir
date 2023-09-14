@@ -1,3 +1,4 @@
+require("dotenv").config();
 module.exports = {
     // HOST: "dpg-chovkhik728ivvv37c3g-a",
     // PORT: 5432,
@@ -5,10 +6,10 @@ module.exports = {
     // PASSWORD: "WiPanPNf0pIVzwue7xx62CUhT1T3LqCT",
     // DB: "cartogo",
     // dialect: "postgresql",
-    HOST: "localhost",
-    PORT: 8080,
-    USER: "root",
-    PASSWORD: "",
-    DB: "bayir",
-    dialect: "mysql",
+    HOST: process.env.HOST,
+    PORT: process.env.PORT,
+    USER: process.env.USER,
+    PASSWORD: process.env.PASSWORD,
+    DB: process.env.DB,
+    dialect: process.env.dialect,
 };
