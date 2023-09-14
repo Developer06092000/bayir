@@ -7,7 +7,7 @@ module.exports = (app) => {
     router.get("/", route.findAll);
     router.get("/:id/", route.findOne);
     router.post("/", uploadFile.single("image"), route.create);
-    router.patch("/:id/", route.update);
+    router.patch("/:id/", uploadFile.single("image"), route.update);
     router.delete("/:id/", route.delete);
 
     // router.post("/", verifyToken, uploadFile.single("image"), route.create);

@@ -17,7 +17,7 @@ exports.create = (req, res) => {
         price: req.body.price,
         discount: req.body.discount,
         description: req.body.description,
-        brandId: req.body.brandId,
+        brandId: req.body.brand,
     })
         .then((res1) => {
             // Products.findByPk(res1.id)
