@@ -21,8 +21,9 @@ db.sequelize = sequelize;
 db.Categories = require("./categoriesModels.js")(sequelize, Sequelize);
 db.Brands = require("./brandsModels.js")(sequelize, Sequelize);
 db.Products = require("./productsModels.js")(sequelize, Sequelize);
+db.Images = require("./imagesModels.js")(sequelize, Sequelize);
 
-db.Categories.hasMany(db.Brands);
-db.Brands.hasMany(db.Products);
+// db.Categories.hasMany(db.Brands);
+// db.Brands.hasMany(db.Products);
 
 module.exports = db;

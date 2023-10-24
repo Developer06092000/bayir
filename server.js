@@ -19,9 +19,6 @@ db.sequelize
         console.log("Failed to sync db: " + err.message);
     });
 
-// require("./app/routes/Cars.js")(app);
-// require("./app/routes/Orders.js")(app);
-// require("./app/routes/auth.js")(app);
 require("./app/routes")(app);
 const port = process.env.PORT || 5000;
 
