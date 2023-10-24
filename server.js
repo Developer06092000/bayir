@@ -22,7 +22,7 @@ db.sequelize
 require("./app/routes")(app);
 
 setInterval(() => {
-    app.get("/", () => {});
+    app.get("https://bayir.onrender.com/", () => {});
 }, [20000]);
 
 const port = process.env.PORT || 5000;
