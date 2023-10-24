@@ -7,17 +7,21 @@ const Images = db.Images;
 exports.findAll = (req, res) => {
     Products.findAll({ raw: true })
         .then((res1) => {
-            res1.map((item, key) => {
-                let data = [];
-                Images.findAll({ where: { product: item.id } }).then((res2) => {
-                    let data1 = item;
-                    data1.img_list = res2.map((item1) => item1);
-                    data.push(data1);
-                    if (key === res1.length - 1) {
-                        res.send(data);
-                    }
+            if (res1.length !== 0) {
+                res1.map((item, key) => {
+                    let data = [];
+                    Images.findAll({ where: { product: item.id } }).then((res2) => {
+                        let data1 = item;
+                        data1.img_list = res2.map((item1) => item1);
+                        data.push(data1);
+                        if (key === res1.length - 1) {
+                            res.send(data);
+                        }
+                    });
                 });
-            });
+            } else {
+                res.send(res1);
+            }
         })
         .catch((err) => res.send(err));
 };
