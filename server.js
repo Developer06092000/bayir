@@ -10,8 +10,8 @@ app.use(express.json());
 app.use("/app/media/", express.static("./app/media/"));
 
 db.sequelize
-    .sync()
-    // .sync({ force: true })
+    // .sync()
+    .sync({ force: true })
     .then(() => {
         console.log("Synced db.");
     })
