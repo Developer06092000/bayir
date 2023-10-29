@@ -15,7 +15,7 @@ exports.findAll = (req, res) => {
                         data1.img_list = res2.map((item1) => item1);
                         data.push(data1);
                         if (key === res1.length - 1) {
-                            res.send(data);
+                            res.send(res1);
                         }
                     });
                 });
