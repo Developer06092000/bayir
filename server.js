@@ -7,7 +7,7 @@ const db = require("./app/models/index");
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 app.use(express.json());
-app.use("/app/media/", express.static("./app/media/"));
+app.use("/app/media/", express.static("/app/media/"));
 
 db.sequelize
     .sync()
