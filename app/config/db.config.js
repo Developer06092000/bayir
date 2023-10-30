@@ -15,5 +15,5 @@ module.exports = {
     dialect: process.env.dialect,
     genSalt: +process.env.genSalt,
     verifyKey: process.env.verifyKey,
-    tokenKey: "developer06092000",
+    tokenKey: process.env.tokenKey,
 };
