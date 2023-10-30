@@ -13,4 +13,7 @@ module.exports = {
     PASSWORD: process.env.PASSWORD,
     DB: process.env.DB,
     dialect: process.env.dialect,
+    genSalt: +process.env.genSalt,
+    verifyKey: process.env.verifyKey,
+    tokenKey: "developer06092000",
 };

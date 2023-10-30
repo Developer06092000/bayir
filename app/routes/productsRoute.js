@@ -1,4 +1,5 @@
 const uploadFile = require("../middleware/uploadImage.js");
+const verifyToken = require("../middleware/verifyToken.js");
 
 module.exports = (app) => {
     const route = require("../controllers/productsController.js");
@@ -6,17 +7,17 @@ module.exports = (app) => {
 
     router.get("/", route.findAll);
     router.get("/:id/", route.findOne);
-    // router.post("/", uploadFile.array("img_list"), route.create);
     router.post(
         "/",
+        verifyToken,
         uploadFile.fields([
             { name: "img_list", maxCount: 5 },
             { name: "img", maxCount: 1 },
         ]),
         route.create
     );
-    router.patch("/:id/", uploadFile.single("image"), route.update);
-    router.delete("/:id/", route.delete);
+    router.patch("/:id/", verifyToken, uploadFile.single("image"), route.update);
+    router.delete("/:id/", verifyToken, route.delete);
 
     // router.post("/", verifyToken, uploadFile.single("image"), route.create);
     // router.patch("/:id/", verifyToken, uploadFile.single("image"), route.update);
